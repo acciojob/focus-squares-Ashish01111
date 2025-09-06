@@ -2,27 +2,28 @@
 <html>
 <head>
 	<title>Colorful Squares</title>
-	<style>
-		>
+
 </head>
 <body>
-  <div class="focus-sq" id="sq1"></div>
-  <div class="focus-sq" id="sq2"></div>
-  <div class="focus-sq" id="sq3"></div>
+  <div class="focus-sq" id="square1"></div>
+  <div class="focus-sq" id="square2"></div>
+  <div class="focus-sq" id="square3"></div>
 
   <script>
     const squares = document.querySelectorAll('.focus-sq');
 
     squares.forEach((sq) => {
-      sq.addEventListener('mouseenter', () => {
+      sq.addEventListener('mouseover', () => {
         squares.forEach((otherSq) => {
           if (otherSq !== sq) {
             otherSq.style.backgroundColor = '#6F4E37'; // Coffee
+          } else {
+            otherSq.style.backgroundColor = '#E6E6FA'; // Lavender
           }
         });
       });
 
-      sq.addEventListener('mouseleave', () => {
+      sq.addEventListener('mouseout', () => {
         squares.forEach((otherSq) => {
           otherSq.style.backgroundColor = '#E6E6FA'; // Lavender
         });
